@@ -1,0 +1,201 @@
+/* src/styles/Listing.css */
+
+/* 全体コンテナ */
+.container {
+  width: 90%;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 40px;
+  background: #fff;
+  /* ポップな太い枠線と青い影 */
+  border: 3px solid #333;
+  border-radius: 12px;
+  box-shadow: 8px 8px 0 #00a8ff;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  box-sizing: border-box;
+}
+
+/* 見出し */
+.container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2em;
+  font-weight: 900; /* 極太 */
+  color: #333;
+  /* 蛍光イエローマーカー風の下線 */
+  background: linear-gradient(transparent 60%, #ffe600 60%);
+  display: table; /* 中央寄せしつつマーカーを引く */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 10px;
+}
+
+/* フォームのブロック */
+.form-group {
+  margin-bottom: 25px;
+}
+
+/* ラベル */
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+  /* 左側にピンクのアクセントバー */
+  border-left: 5px solid #ff0055;
+  padding-left: 10px;
+}
+
+/* テキスト入力・セレクト・テキストエリア */
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  /* 枠線を太く */
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px; /* スマホでズームしないサイズ */
+  color: #333;
+  transition: all 0.2s;
+  background-color: #fff;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #00a8ff; /* フォーカス時は鮮やかな青 */
+  background-color: #f0f8ff; /* 薄い青背景 */
+  box-shadow: 0 0 0 3px rgba(0, 168, 255, 0.1);
+}
+
+/* テキストエリア高さ */
+textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+/* 画像アップロードボックス */
+.upload-box {
+  border: 3px dashed #ccc; /* 点線を太く */
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  color: #777;
+  cursor: pointer;
+  background-color: #fafafa;
+  transition: all 0.2s;
+  font-weight: bold;
+}
+
+.upload-box:hover {
+  border-color: #00a8ff;
+  background-color: #f0f8ff;
+  color: #00a8ff;
+}
+
+/* プレビュー画像一覧ボックス */
+#preview {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 15px;
+  justify-content: center;
+}
+
+/* 画像ラッパー */
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+  transition: transform 0.2s;
+}
+
+.image-wrapper:hover {
+  transform: scale(1.05); /* ホバーで少し拡大 */
+}
+
+/* プレビュー画像 */
+.preview-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  /* 枠線と影でステッカー風に */
+  border: 2px solid #333;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+
+/* 削除ボタン */
+.delete-btn {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ff0055; /* ポップな赤 */
+  color: white;
+  border: 2px solid #fff; /* 白い縁取り */
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 22px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  transition: all 0.2s;
+  z-index: 10;
+}
+
+.delete-btn:hover {
+  background: #ff1a66;
+  transform: scale(1.1);
+}
+
+/* 出品ボタン */
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background: #ff0055; /* ポップな赤ピンク */
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: all 0.2s;
+  /* 立体的な影 */
+  box-shadow: 0 6px 0 #cc0044;
+}
+
+.submit-btn:hover {
+  background: #ff1a66;
+  transform: translateY(2px); /* 少し沈む */
+  box-shadow: 0 4px 0 #cc0044;
+}
+
+.submit-btn:active {
+  transform: translateY(6px); /* 完全に沈む */
+  box-shadow: none;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .container {
+    padding: 25px 20px;
+    box-shadow: 6px 6px 0 #00a8ff;
+  }
+  
+  .preview-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .submit-btn {
+    font-size: 18px;
+  }
+}

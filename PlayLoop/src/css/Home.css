@@ -1,0 +1,438 @@
+/* src/css/Home.css */
+
+/* --------------------------------------------------
+   ヒーローセクション
+-------------------------------------------------- */
+.hero-section {
+  background-color: #fff;
+  border: 3px solid #333;
+  padding: 40px 20px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  box-shadow: 8px 8px 0 #00a8ff, 16px 16px 0 #ff0055; 
+  text-align: center;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333;
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #333;
+  margin-bottom: 15px;
+  display: inline-block;
+  background: linear-gradient(transparent 60%, #ffe600 60%);
+  padding: 0 5px;
+}
+
+.hero-subtitle {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #00a8ff;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.8;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------
+   機能説明セクション
+-------------------------------------------------- */
+.features-section {
+    padding: 40px 20px 60px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #333;
+    margin-bottom: 15px;
+    background: linear-gradient(transparent 60%, #ffe600 60%);
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.section-subtitle {
+    color: #444;
+    font-weight: 900;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* グリッドレイアウト */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* カードのデザイン */
+.feature-card {
+    background: #fff;
+    border: 3px solid #333;
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: 8px 8px 0 #00a8ff;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 10px 0 #ff0055; 
+    border-color: #ff0055;
+}
+
+/* アイコン装飾 */
+.feature-icon {
+    width: 70px;
+    height: 70px;
+    background: #ffe600;
+    color: #333;
+    border: 3px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    box-shadow: 4px 4px 0 #333;
+}
+
+.feature-title {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.feature-desc {
+    color: #333;
+    font-weight: 700;
+    line-height: 1.6;
+    font-size: 1.05rem;
+    margin-bottom: 25px;
+    text-align: left;
+    flex-grow: 1;
+}
+
+/* リンクボタン */
+.feature-link {
+    color: #fff;
+    background: #00a8ff;
+    font-weight: 900;
+    font-size: 1.1rem;
+    text-decoration: none;
+    padding: 12px 25px;
+    border: 3px solid #333;
+    border-radius: 8px;
+    transition: all 0.2s;
+    box-shadow: 4px 4px 0 #333;
+}
+
+.feature-link:hover {
+    background: #008be6;
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0 #333;
+}
+
+.feature-link:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+}
+
+/* ログイン促す用の別カラーボタン */
+.feature-link.login-link {
+    background: #ff0055;
+}
+.feature-link.login-link:hover {
+    background: #ff1a66;
+}
+
+/* ==========================================
+   ログイン後 (ダッシュボード) のスタイル
+========================================== */
+.dashboard-section {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+.dashboard-title {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #333;
+    margin-bottom: 8px;
+    background: linear-gradient(transparent 60%, #ffe600 60%);
+    display: inline-block;
+    padding: 0 5px;
+}
+
+.dashboard-subtitle {
+    font-size: 1.05rem;
+    font-weight: 900;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* 4列のグリッドレイアウト */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+@media (min-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+}
+
+/* 商品カード (ポップに修正) */
+.home-product-card {
+    background: #fff;
+    border: 3px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
+    box-shadow: 6px 6px 0 #00a8ff;
+}
+
+.home-product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 0 #ff0055;
+    border-color: #ff0055;
+}
+
+.home-product-image-wrapper {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    background-color: #f5f5f5; 
+    border-bottom: 3px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.home-product-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.home-product-info {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.home-product-name {
+    font-size: 1.05rem;
+    font-weight: 900;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 価格・いいねの行 */
+.home-product-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.home-product-price {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #ff0055;
+    margin: 0;
+    text-shadow: 1px 1px 0 rgba(255, 0, 85, 0.1);
+}
+
+.home-product-favorite {
+    font-size: 1rem;
+    color: #ea352d;
+    font-weight: 900;
+}
+
+/* 「さらに商品を表示する」ボタン */
+.more-products-container {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.more-products-link {
+    display: inline-block;
+    color: #333;
+    background-color: #ffe600;
+    font-weight: 900;
+    text-decoration: none;
+    font-size: 1.05rem;
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: 3px solid #333;
+    box-shadow: 4px 4px 0 #333;
+    transition: all 0.2s;
+}
+
+.more-products-link:hover {
+    background-color: #f0d800;
+    transform: translateY(2px);
+    box-shadow: 2px 2px 0 #333;
+}
+
+.more-products-link:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+/* メーカーボタン */
+.maker-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.maker-btn {
+    padding: 10px 20px;
+    border: 3px solid #333;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #333;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 1rem;
+    box-shadow: 3px 3px 0 #333;
+}
+
+.maker-btn:hover {
+    transform: translateY(2px);
+    box-shadow: 1px 1px 0 #333;
+    background-color: #f0f0f0;
+}
+
+.maker-btn.active {
+    background-color: #00a8ff;
+    color: #fff;
+    transform: translateY(2px);
+    box-shadow: 1px 1px 0 #333;
+}
+
+/* プラットフォーム（ゲーム機）ボタン */
+.platform-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f4f8fc;
+    border-radius: 12px;
+    border: 3px solid #ddd;
+}
+
+.platform-btn {
+    padding: 8px 16px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #333;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+    box-shadow: 2px 2px 0 #333;
+}
+
+.platform-btn:hover {
+    transform: translateY(2px);
+    box-shadow: 0px 0px 0 #333;
+    background-color: #e9fff8;
+}
+
+.platform-btn.active {
+    background-color: #ff0055;
+    color: #fff;
+    transform: translateY(2px);
+    box-shadow: 0px 0px 0 #333;
+}
+
+/* プラットフォームごとの結果エリア */
+.platform-results {
+    margin-top: 20px;
+    border-top: 3px dashed #ccc;
+    padding-top: 30px;
+}
+
+.results-title {
+    font-size: 1.6rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 3px solid #ff0055; 
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* その他 */
+.loading-container {
+    padding: 50px;
+    text-align: center;
+    font-weight: 900;
+    color: #333;
+    font-size: 1.2rem;
+}
+
+.no-items-msg {
+    color: #555;
+    font-weight: 900;
+    text-align: center;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border: 3px dashed #ccc;
+    border-radius: 8px;
+}
+
+.platform-no-items {
+    padding: 20px 0;
+}

@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "multer": "^2.0.2",
+    "mysql2": "^3.15.3",
+    "firebase-admin": "^13.0.0"
+  },
+  "name": "playloop-portfolio-server",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "test": "node --test test/*.test.cjs",
+    "check:publication": "node scripts/check-publication.cjs",
+    "prepare": "git config --local core.hooksPath .githooks"
+  }
+}

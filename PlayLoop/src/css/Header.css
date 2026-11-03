@@ -1,0 +1,181 @@
+/* src/styles/Header.css */
+
+/* --- ヘッダー全体のレイアウト --- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #ffffff; /* 白背景で明るく */
+  border-bottom: 3px solid #00a8ff; /* 鮮やかな青のライン */
+  box-shadow: 0 4px 10px rgba(0, 168, 255, 0.1); /* 薄い青の影 */
+  position: relative;
+  height: auto;
+  min-height: 80px;
+  z-index: 100;
+}
+
+/* --- 左側：タイトルロゴ --- */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+/* ヘッダーのロゴ画像用スタイル */
+.header-title-text { font-size: 2.4rem; font-weight: 900; color: #007fbd; letter-spacing: -0.06em; }
+.header-left a { text-decoration: none; }
+
+/* --- 中央：ナビゲーション --- */
+.header-nav {
+  position: absolute; 
+  left: 50%;          
+  transform: translateX(-50%);
+}
+
+.header-nav .nav-menu {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav .nav-menu a {
+  text-decoration: none;
+}
+
+.header-nav .nav-menu i {
+  font-size: 3rem;
+  color: #ababab; /* 通常時は薄いグレー */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0 25px;
+  position: relative;
+}
+
+/* アイコン間の縦線 */
+.header-nav .nav-menu > a:not(:first-child) i {
+  border-left: 2px solid #eee; /* 薄い境界線 */
+}
+
+/* アイコンホバー時：鮮やかな青 */
+.header-nav .nav-menu i:hover {
+  color: #00a8ff;
+  transform: translateY(-3px); /* 少し上に跳ねる */
+}
+
+/* --- 右側：ユーザーメニュー・ヘルプ --- */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-link, .help-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+/* ■ ログイン時の頭文字アイコン */
+.user-icon-initials {
+  width: 50px;
+  height: 50px;
+  background-color: #ff0055; /* ビビッドな赤ピンク */
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 20px;
+  margin-right: 10px;
+  box-shadow: 0 4px 0 rgba(200, 0, 50, 0.5); /* 立体的な影 */
+}
+
+/* ■ 未ログイン時のボタンコンテナ */
+.auth-buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+/* 新規登録ボタン (塗りつぶし) */
+.signup-btn .user-text {
+  background-color: #ff0055;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 25px;
+  border: 2px solid #ff0055;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+.signup-btn:hover .user-text {
+  background-color: #e6004c;
+  border-color: #e6004c;
+  box-shadow: 0 4px 10px rgba(255, 0, 85, 0.3);
+}
+
+/* ログインボタン (白抜き) */
+.login-btn .user-text {
+  background-color: #fff;
+  color: #ff0055;
+  font-weight: bold;
+  padding: 10px 25px;
+  border: 2px solid #ff0055;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+
+.login-btn:hover .user-text {
+  background-color: #ff0055;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(255, 0, 85, 0.3);
+}
+
+/* ユーザー名のテキスト */
+.user-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* ヘルプアイコン */
+.help-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #ffe600; /* ビビッドな黄色 */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+  font-size: 24px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 0 #dcc200; /* 立体的な影 */
+}
+
+.help-icon:hover {
+  transform: translateY(2px); /* 押したような動き */
+  box-shadow: 0 2px 0 #dcc200;
+}
+
+/* --- レスポンシブ --- */
+@media (max-width: 1024px) {
+  .header { padding: 15px 20px; }
+  .header-title-text { font-size: 2rem; }
+  .header-nav .nav-menu i { font-size: 2rem; padding: 0 15px; }
+  .user-text { font-size: 16px; }
+  .user-icon-initials, .help-icon { width: 40px; height: 40px; font-size: 16px; }
+  .signup-btn .user-text, .login-btn .user-text { padding: 8px 18px; }
+}
+
+@media (max-width: 768px) {
+  .auth-buttons { gap: 10px; }
+  /* スマホの時はログイン中のユーザー名のみ非表示にし、ボタンは残す */
+  .user-link:not(.signup-btn):not(.login-btn) .user-text { display: none; }
+  .signup-btn .user-text, .login-btn .user-text {
+    display: block;
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}

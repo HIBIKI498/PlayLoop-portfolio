@@ -1,0 +1,36 @@
+/* src/styles/Footer.css */
+.footer {
+  background-color: #2d3436; /* 以前より少しグレー寄りの黒 */
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  /* 上の線を優しい黄色に */
+  border-top: 4px solid #fdcb6e; 
+}
+
+.footer p {
+  margin: 20px 0 0;
+  font-size: 0.9em;
+  color: #b2bec3; /* 読みやすいグレー */
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95em;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #fdcb6e; /* ホバー時に優しい黄色 */
+  text-decoration: underline;
+}

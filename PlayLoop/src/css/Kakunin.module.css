@@ -1,0 +1,345 @@
+/* src/styles/Kakunin.module.css */
+
+.pageWrapper {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  background-color: #f4f7f6; 
+  min-height: 100vh;
+  padding-bottom: 40px;
+  padding-top: 1px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 40px;
+  background-color: #fff;
+  border: 3px solid #333;
+  border-radius: 12px;
+  box-shadow: 8px 8px 0 #00a8ff;
+  box-sizing: border-box;
+}
+
+.container h1 {
+  text-align: center;
+  border-bottom: none;
+  padding-bottom: 5px;
+  margin-bottom: 40px;
+  font-size: 28px;
+  font-weight: 900;
+  color: #333;
+  background: linear-gradient(transparent 60%, #ffe600 60%);
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- 商品情報エリア --- */
+.product {
+  display: flex;
+  gap: 30px;
+  border-bottom: 3px dashed #ddd;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  align-items: stretch; 
+}
+
+/* 画像エリアの比率・サイズ調整 */
+.imageWrapper {
+  width: 240px; 
+  height: 240px;
+  flex-shrink: 0;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 2px solid #eee; 
+}
+
+.productImg {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.productInfo {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.productName {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 0 10px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.productPrice {
+  font-size: 24px;
+  color: #ff0055;
+  font-weight: 900;
+  margin: 0 0 15px;
+  text-shadow: 1px 1px 0 rgba(255, 0, 85, 0.2);
+}
+
+.productMeta {
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background-color: #f9f9f9;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.productState, .shipDays {
+  font-weight: 600;
+}
+
+/* 出品者情報 */
+.sellerInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #fff;
+  border-radius: 6px;
+  border: 2px solid #eee;
+  width: fit-content;
+}
+
+/* ★追加: イニシャルアイコン用のスタイル */
+.initialIcon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #b0bec5;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.sellerName {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* --- 各セクション（支払い・配送先） --- */
+.section {
+  border-bottom: 3px dashed #ddd; 
+  padding: 25px 0;
+}
+
+.section h2 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  border-left: 6px solid #ff0055;
+  padding-left: 12px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* インラインから移行したテキストスタイル */
+.boldText {
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 5px;
+}
+
+.subText {
+  font-size: 0.9em;
+  color: #666;
+  margin: 0;
+}
+
+.unselectedText {
+  color: #ff0055;
+  font-weight: bold;
+  margin: 0;
+}
+
+.addressText {
+  margin: 0 0 5px;
+  color: #333;
+}
+
+.link {
+  color: #00a8ff;
+  text-decoration: none;
+  font-size: 14px;
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: bold;
+  border: 2px solid #00a8ff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  transition: all 0.2s;
+  background-color: #fff;
+}
+
+.link:hover {
+  background-color: #00a8ff;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 0 rgba(0, 168, 255, 0.3);
+}
+
+/* 金額サマリー */
+.summary {
+  margin: 40px 0;
+  text-align: right;
+  font-size: 16px;
+  color: #555;
+}
+
+.summary p {
+  margin: 12px 0;
+}
+
+.summary span {
+  font-weight: bold;
+  margin-left: 20px;
+  display: inline-block;
+  width: 120px;
+  color: #333;
+}
+
+.total {
+  font-size: 28px;
+  color: #ff0055;
+  font-weight: 900;
+  border-top: 3px solid #333; 
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+/* 購入確定ボタン */
+.btnMain {
+  display: block;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 18px;
+  background-color: #ff0055;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 12px; 
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 6px 0 #cc0044;
+}
+
+.btnMain:hover {
+  background-color: #ff1a66;
+  transform: translateY(2px);
+  box-shadow: 0 4px 0 #cc0044;
+}
+
+.btnMain:active {
+  transform: translateY(6px);
+  box-shadow: none;
+}
+
+.terms {
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+  margin-top: 25px;
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+/* エラーメッセージ（各項目の下） */
+.errorMsg {
+  color: #ff0055;
+  font-size: 0.9em;
+  font-weight: bold;
+  margin-top: 10px;
+  background-color: #fff0f5;
+  padding: 10px;
+  border-radius: 6px;
+  border: 2px solid #ff0055;
+  display: flex;
+  align-items: center;
+}
+.errorMsg::before {
+  content: '!';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #ff0055;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+/* 全体エラーメッセージ（購入ボタンの上） */
+.generalError {
+  color: #fff;
+  background-color: #ff0055;
+  border: 2px solid #cc0044;
+  padding: 15px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+    width: 90%;
+    margin-top: 20px;
+    box-shadow: 6px 6px 0 #00a8ff;
+  }
+
+  .product {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .productInfo {
+    align-items: center;
+    width: 100%;
+  }
+  
+  .productMeta {
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .summary {
+    text-align: center;
+  }
+  
+  .total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    font-size: 22px;
+  }
+}

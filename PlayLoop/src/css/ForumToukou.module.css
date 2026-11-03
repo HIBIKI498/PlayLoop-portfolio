@@ -1,0 +1,653 @@
+/* src/css/ForumToukou.module.css */
+
+.pageWrapper {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 100px;
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.backBtn {
+  background: #fff;
+  border: 3px solid #333;
+  color: #333;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-weight: 900;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 #333;
+  transition: all 0.2s;
+}
+
+.backBtn:hover {
+  background-color: #ffe600;
+  transform: translateY(2px);
+  box-shadow: 1px 1px 0 #333;
+}
+
+.backBtn:active {
+  transform: translateY(3px);
+  box-shadow: none;
+}
+
+/* スレッド本文エリア */
+.postCard {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  border: 3px solid #333;
+  margin-bottom: 30px;
+  box-shadow: 8px 8px 0 #00a8ff;
+}
+
+.postHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.postMeta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.categoryTag {
+  background-color: #ffe600;
+  color: #333;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 900;
+  border: 2px solid #333;
+}
+
+.postDate {
+  font-size: 0.95rem;
+  color: #555;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.quoteBtn {
+  background-color: #fff;
+  border: 2px solid #333;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+  transition: all 0.2s;
+  box-shadow: 2px 2px 0 #333;
+}
+
+.quoteBtn:hover {
+  background-color: #e9fff8;
+  transform: translateY(2px);
+  box-shadow: 0 0 0 #333;
+}
+
+.postTitle {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: #222;
+  line-height: 1.3;
+  border-bottom: 3px solid #ffe600;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 3px dashed #ddd;
+}
+
+.userIcon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #ff0055;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 900;
+  border: 2px solid #333;
+  box-shadow: 2px 2px 0 #333;
+}
+
+.userName {
+  font-weight: 900;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.postImageWrapper {
+  width: 100%;
+  max-height: 400px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  border: 3px solid #333;
+  box-shadow: 4px 4px 0 #333;
+}
+
+.postImage {
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+
+.postContent {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.likeBtnWrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.likeBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 900;
+  font-size: 1rem;
+  transition: all 0.2s;
+  background-color: #fff;
+  color: #333;
+  border: 3px solid #333;
+  box-shadow: 4px 4px 0 #333;
+}
+
+.likeBtn:hover {
+  background-color: #f0f0f0;
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0 #333;
+}
+
+.likeBtn.liked {
+  background-color: #ff0055;
+  color: #fff;
+  border-color: #333;
+  box-shadow: 4px 4px 0 #333;
+}
+
+.likeBtn.liked:hover {
+  background-color: #e6004c;
+}
+
+/* 引用表示用 */
+.quoteBlock {
+  background-color: #fff;
+  border: 3px solid #333;
+  border-left: 6px solid #00a8ff;
+  padding: 15px;
+  margin: 15px 0;
+  border-radius: 8px;
+  color: #444;
+  font-size: 0.95rem;
+  font-weight: bold;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+}
+
+.quoteImageWrapper {
+  margin: 10px 0;
+  border: 2px solid #333;
+  border-radius: 4px;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.quoteImage {
+  max-width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  display: block;
+}
+
+.textLine {
+  min-height: 1.2em;
+}
+
+/* コメントセクション */
+.commentsSection {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  border: 3px solid #333;
+  box-shadow: 8px 8px 0 #ffe600;
+}
+
+.commentsTitle {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 25px;
+  color: #333;
+  border-bottom: 3px solid #333;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.commentsList {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.emptyComments {
+  color: #555;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px 0;
+  border: 3px dashed #ccc;
+  border-radius: 8px;
+}
+
+.commentItem {
+  display: flex;
+  gap: 15px;
+}
+
+.commentUserIcon {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #00a8ff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 900;
+  flex-shrink: 0;
+  border: 2px solid #333;
+  box-shadow: 2px 2px 0 #333;
+}
+
+.commentContent {
+  flex: 1;
+}
+
+.commentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.commentHeaderLeft {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.commentIndexName {
+  font-weight: 900;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.commentDate {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: bold;
+}
+
+.commentBody {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 0 12px 12px 12px;
+  border: 3px solid #333;
+  line-height: 1.6;
+  color: #333;
+  font-weight: bold;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.05);
+}
+
+.commentImageWrapper {
+  margin-top: 15px;
+  border: 2px solid #333;
+  border-radius: 6px;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.commentImage {
+  max-width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+  display: block;
+}
+
+/* モーダルウィンドウ（返信ポップアップ） */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modalContent {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  border: 4px solid #333;
+  box-shadow: 10px 10px 0 #ff0055;
+}
+
+.closeModalBtn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #fff;
+  border: 2px solid #333;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+  line-height: 1;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 2px 2px 0 #333;
+  transition: all 0.2s;
+}
+
+.closeModalBtn:hover {
+  background-color: #ffe600;
+  transform: translateY(2px);
+  box-shadow: 0 0 0 #333;
+}
+
+.modalTitle {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #333;
+  border-bottom: 3px solid #ffe600;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.quotePreview {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-left: 6px solid #00a8ff;
+  border: 3px solid #333;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+}
+
+.removeQuoteBtn {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #ff0055;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  font-weight: bold;
+}
+
+.quotePreviewHeader {
+  font-size: 0.9rem;
+  color: #00a8ff;
+  margin-bottom: 5px;
+  font-weight: 900;
+}
+
+.quotePreviewText {
+  font-size: 0.95rem;
+  color: #444;
+  font-weight: bold;
+  white-space: pre-wrap;
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.imageInputLabel {
+  display: block;
+  font-weight: 900;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.imageInput {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 3px solid #333;
+  background-color: #fff;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.imageInput:focus {
+  outline: none;
+  border-color: #00a8ff;
+  background-color: #f0f8ff;
+}
+
+.modalPreviewWrapper {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #333;
+}
+
+.modalPreviewImage {
+  max-height: 150px;
+  border-radius: 4px;
+}
+
+.textarea {
+  width: 100%;
+  padding: 15px;
+  border-radius: 8px;
+  border: 3px solid #333;
+  box-sizing: border-box;
+  resize: vertical;
+  margin-bottom: 20px;
+  font-size: 1.05rem;
+  font-family: inherit;
+  font-weight: bold;
+  transition: all 0.2s;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.05);
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #00a8ff;
+  background-color: #f0f8ff;
+  box-shadow: 4px 4px 0 rgba(0, 168, 255, 0.2);
+}
+
+.modalButtonGroup {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+}
+
+.cancelBtn {
+  background-color: #fff;
+  color: #333;
+  border: 3px solid #333;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 900;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 4px 4px 0 #333;
+  transition: all 0.2s;
+}
+
+.cancelBtn:hover {
+  background-color: #eee;
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0 #333;
+}
+
+.cancelBtn:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+.submitBtn {
+  background-color: #00a8ff;
+  color: #fff;
+  border: 3px solid #333;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 900;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 4px 4px 0 #333;
+  transition: all 0.2s;
+}
+
+.submitBtn:hover {
+  background-color: #008be6;
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0 #333;
+}
+
+.submitBtn:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+/* フローティングボタンエリア */
+.fabContainer {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 1000;
+}
+
+.fabBtn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.2s;
+  font-weight: 900;
+}
+
+.fabScroll {
+  background-color: #fff;
+  color: #333;
+  border: 3px solid #333;
+  box-shadow: 4px 4px 0 #333;
+}
+.fabScroll:hover {
+  background-color: #ffe600;
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0 #333;
+}
+.fabScroll:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+.fabScrollDown {
+  background-color: #333;
+  color: #fff;
+  border: 3px solid #333;
+  box-shadow: 4px 4px 0 #00a8ff;
+}
+.fabScrollDown:hover {
+  background-color: #555;
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0 #00a8ff;
+}
+.fabScrollDown:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+.fabPrimary {
+  background-color: #ff0055;
+  color: #fff;
+  border: 3px solid #333;
+  box-shadow: 4px 4px 0 #333;
+}
+.fabPrimary:hover {
+  background-color: #ff1a66;
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0 #333;
+}
+.fabPrimary:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}

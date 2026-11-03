@@ -1,0 +1,174 @@
+/* src/styles/Shiharai.module.css */
+
+/* ページの基本レイアウト */
+.pageWrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+    background: #f4f7f6; /* 薄いグレー */
+    margin: 0;
+}
+
+/* フォームを囲むコンテナ (中央配置用) */
+.formContainer {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 40px 0 60px 0;
+}
+
+.formContainer h1 {
+    font-size: 2em;
+    font-weight: 900; /* 極太 */
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+    /* 蛍光イエローマーカー風の下線 */
+    background: linear-gradient(transparent 60%, #ffe600 60%);
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.formBox {
+    background: #fff;
+    padding: 40px;
+    /* ポップな太い枠線と青い影 */
+    border: 3px solid #333;
+    border-radius: 12px;
+    box-shadow: 8px 8px 0 #00a8ff;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+/* --- フォームの共通スタイル --- */
+
+.formGroup {
+    margin-bottom: 25px;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    font-size: 1em;
+    /* 左側にピンクのアクセント */
+    border-left: 5px solid #ff0055;
+    padding-left: 10px;
+}
+
+.inputField {
+    width: 100%;
+    padding: 12px;
+    /* 枠線を太く */
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: all 0.2s;
+    background-color: #fff;
+    color: #333;
+}
+
+.inputField:focus {
+    border-color: #00a8ff; /* フォーカス時に鮮やかな青 */
+    background-color: #f0f8ff; /* 薄い青背景 */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 168, 255, 0.1);
+}
+
+/* --- クレジットカード情報欄 --- */
+
+.creditFields {
+    margin-top: 30px; 
+    padding: 25px; 
+    /* 点線を太くしてポップに */
+    border: 3px dashed #ccc;
+    border-radius: 10px;
+    background: #fafafa;
+    transition: all 0.2s;
+}
+
+.creditFields:hover {
+    border-color: #00a8ff;
+    background: #f0f8ff;
+}
+
+.creditFields .formGroup {
+    margin-bottom: 20px;
+}
+
+/* --- 確定ボタン --- */
+
+.submitBtn {
+    width: 100%;
+    padding: 15px;
+    background: #ff0055; /* ポップな赤ピンク */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-top: 40px; 
+    font-size: 1.3em; 
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    /* 立体的な影 */
+    box-shadow: 0 6px 0 #cc0044;
+}
+
+.submitBtn:hover {
+    background: #ff1a66;
+    transform: translateY(2px);
+    box-shadow: 0 4px 0 #cc0044;
+}
+
+.submitBtn:active {
+    transform: translateY(6px);
+    box-shadow: none;
+}
+
+/* --- レスポンシブ対応 --- */
+@media (max-width: 768px) {
+    .formContainer {
+        padding: 30px 15px;
+    }
+    
+    .formBox {
+        width: 100%;
+        padding: 25px;
+        box-shadow: 6px 6px 0 #00a8ff;
+    }
+
+    .formContainer h1 {
+        font-size: 1.6em;
+    }
+}
+
+/* エラーメッセージ用スタイル */
+.errorMsg {
+  color: #ff0055;
+  font-size: 0.9em;
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.errorMsg::before {
+    content: '!';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: #ff0055;
+    color: white;
+    text-align: center;
+    line-height: 18px;
+    border-radius: 50%;
+    margin-right: 5px;
+    font-size: 0.8em;
+}

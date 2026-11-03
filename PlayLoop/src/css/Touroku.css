@@ -1,0 +1,261 @@
+/* src/css/Touroku.css */
+
+/* ページの基本レイアウト */
+/* 背景色を統一するため、ラッパーを追加して中央寄せにします */
+.registration-wrapper {
+    background-color: #f4f7f6; /* 薄いグレー */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+}
+
+.registration-container {
+    background-color: #fff;
+    padding: 40px;
+    /* ポップな太い枠線と青い影 */
+    border: 3px solid #333;
+    border-radius: 12px;
+    box-shadow: 8px 8px 0 #00a8ff;
+    max-width: 500px;
+    width: 100%;
+    margin: 30px auto;
+    box-sizing: border-box;
+}
+
+.registration-container h1 {
+    font-size: 2em;
+    font-weight: 900; /* 極太 */
+    color: #333;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: none;
+    padding-bottom: 5px;
+    /* 蛍光イエローマーカー風の下線 */
+    background: linear-gradient(transparent 60%, #ffe600 60%);
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* フォームグループ */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    /* 左側にピンクのアクセント */
+    border-left: 5px solid #ff0055;
+    padding-left: 10px;
+}
+
+.required {
+    color: #ff0055;
+    font-size: 0.85em;
+    margin-left: 8px;
+    background-color: #ffe6e6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+/* 入力フィールド */
+.registration-container input[type="text"],
+.registration-container input[type="email"],
+.registration-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    /* 枠線を太く */
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.2s;
+}
+
+.registration-container input:focus {
+    border-color: #00a8ff; /* フォーカス時に鮮やかな青 */
+    background-color: #f0f8ff; /* 薄い青背景 */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 168, 255, 0.1);
+}
+
+/* --- 利用規約チェックボックス --- */
+.terms {
+    margin-bottom: 30px;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    color: #555;
+    background-color: #fafafa;
+    padding: 10px;
+    border-radius: 6px;
+    border: 2px dashed #ddd;
+}
+
+.terms input[type="checkbox"] {
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.terms a {
+    color: #00a8ff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+/* 登録ボタン */
+.register-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #ff0055; /* ポップな赤ピンク */
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    /* 立体的な影 */
+    box-shadow: 0 6px 0 #cc0044;
+}
+
+.register-btn:hover {
+    background-color: #ff1a66;
+    transform: translateY(2px);
+    box-shadow: 0 4px 0 #cc0044;
+}
+
+.register-btn:active {
+    transform: translateY(6px);
+    box-shadow: none;
+}
+
+/* ログインリンク */
+.login-link {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.95em;
+    font-weight: bold;
+    color: #555;
+}
+
+.login-link a {
+    color: #00a8ff;
+    text-decoration: none;
+    margin-left: 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.login-link a:hover {
+    border-bottom-color: #00a8ff;
+}
+
+/* --- 確認ページ用のスタイル --- */
+.confirm-table {
+    width: 100%;
+    border-collapse: separate; /* 枠線を分離 */
+    border-spacing: 0;
+    margin-bottom: 30px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.confirm-table th, .confirm-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #333;
+}
+
+.confirm-table tr:last-child th,
+.confirm-table tr:last-child td {
+    border-bottom: none;
+}
+
+.confirm-table th {
+    background-color: #f0f8ff; /* 薄い青 */
+    width: 35%;
+    font-weight: bold;
+    color: #333;
+    border-right: 1px solid #333;
+}
+
+.confirm-message {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 戻るボタン（リンクまたはボタンとして使用） */
+.back-link {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 8px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 0 #ccc;
+}
+
+.back-link:hover {
+    background-color: #f9f9f9;
+    transform: translateY(2px);
+    box-shadow: 0 2px 0 #ccc;
+}
+
+/* --- レスポンシブ対応 --- */
+@media (max-width: 600px) {
+    .registration-wrapper {
+        padding: 20px 15px;
+    }
+
+    .registration-container {
+        padding: 25px 20px;
+        box-shadow: 6px 6px 0 #00a8ff;
+    }
+    
+    .registration-container h1 {
+        font-size: 1.6em;
+        margin-bottom: 25px;
+    }
+
+    .confirm-table th, .confirm-table td {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+}

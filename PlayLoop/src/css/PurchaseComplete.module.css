@@ -1,0 +1,139 @@
+/* src/styles/PurchaseComplete.module.css */
+
+/* ページ全体のラッパー */
+.pageWrapper {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+  background-color: #f4f7f6; /* 薄いグレー */
+  color: #333;
+  min-height: 80vh; /* ヘッダー・フッターを除いたエリアの高さ確保 */
+  display: flex;
+  justify-content: center; /* 水平中央 */
+  align-items: center; /* 垂直中央 */
+  padding: 40px 20px;
+}
+
+/* 完了メッセージコンテナ（カード部分） */
+.completeContainer {
+  background-color: #fff;
+  padding: 60px 40px;
+  border-radius: 12px;
+  text-align: center;
+  max-width: 600px;
+  width: 90%;
+  /* ポップな太い枠線と青い影 */
+  border: 3px solid #333;
+  box-shadow: 10px 10px 0 #00a8ff;
+  box-sizing: border-box;
+}
+
+/* 完了アイコン */
+.completionIcon {
+  font-size: 6rem;
+  color: #00e676; /* ビビッドな緑 */
+  margin-bottom: 20px;
+  /* アイコンにも影をつけてステッカー風に */
+  text-shadow: 4px 4px 0 #333;
+  display: inline-block;
+}
+
+/* タイトル */
+.title {
+  font-size: 2.2em;
+  font-weight: 900; /* 極太 */
+  color: #333;
+  margin: 0 0 20px 0;
+  /* 蛍光イエローマーカー風の下線 */
+  background: linear-gradient(transparent 60%, #ffe600 60%);
+  display: inline-block;
+  padding: 0 10px;
+}
+
+/* メッセージ */
+.message {
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+/* アクションボタンコンテナ */
+.actionButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ボタンの共通スタイル */
+.btn {
+  display: block;
+  padding: 15px 25px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+}
+
+/* メインボタン (購入履歴へ) - ポップな赤ピンク */
+.btnPrimary {
+  background-color: #ff0055;
+  color: white;
+  border: none;
+  /* 立体的な影 */
+  box-shadow: 0 6px 0 #cc0044;
+}
+
+.btnPrimary:hover {
+  background-color: #ff1a66;
+  transform: translateY(2px);
+  box-shadow: 0 4px 0 #cc0044;
+}
+
+.btnPrimary:active {
+  transform: translateY(6px);
+  box-shadow: none;
+}
+
+/* サブボタン (トップページへ) - 白ベースに黒枠 */
+.btnSecondary {
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #333;
+  box-shadow: 0 6px 0 #ccc;
+}
+
+.btnSecondary:hover {
+  background-color: #f9f9f9;
+  transform: translateY(2px);
+  box-shadow: 0 4px 0 #ccc;
+}
+
+.btnSecondary:active {
+  transform: translateY(6px);
+  box-shadow: none;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 500px) {
+  .completeContainer {
+    padding: 40px 20px;
+    box-shadow: 6px 6px 0 #00a8ff;
+  }
+
+  .completionIcon {
+    font-size: 4rem;
+  }
+
+  .title {
+    font-size: 1.6em;
+  }
+}

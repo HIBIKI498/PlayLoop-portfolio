@@ -1,0 +1,191 @@
+/* src/styles/Juusyo.module.css */
+
+/* ページ全体の基本設定 */
+.pageWrapper {
+    background-color: #f4f7f6; /* 薄いグレー（カードを浮き立たせるため） */
+    color: #333;
+    font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans";
+    margin: 0;
+    min-height: 100vh;
+    padding-top: 1px; /* マージン相殺防止 */
+}
+
+/* 戻るボタンのスタイル */
+.backBtn {
+    display: inline-block;
+    margin: 30px 0 0 50px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    /* ポップなボタンデザイン */
+    border: 2px solid #333;
+    border-radius: 8px;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    /* 硬い影 */
+    box-shadow: 4px 4px 0 #ccc;
+}
+
+.backBtn:hover {
+    background-color: #f9f9f9;
+    transform: translate(2px, 2px); /* 押したように沈む */
+    box-shadow: 2px 2px 0 #ccc;
+}
+
+/* メインコンテナ */
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 30px auto 50px auto;
+    padding: 40px;
+    background-color: #fff;
+    /* 太い枠線と青い影 */
+    border: 3px solid #333;
+    border-radius: 12px;
+    box-shadow: 8px 8px 0 #00a8ff;
+    box-sizing: border-box;
+}
+
+/* ページタイトル */
+.container h1 {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 900; /* 極太 */
+    color: #333;
+    margin-bottom: 40px;
+    padding-bottom: 5px;
+    border-bottom: none; /* 既存の下線を消す */
+    /* 蛍光イエローマーカー風の下線 */
+    background: linear-gradient(transparent 60%, #ffe600 60%);
+    display: inline-block; /* 文字の幅に合わせる */
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: table; /* 中央寄せしつつマーカーを引くためのハック */
+}
+
+/* フォームグループ */
+.formGroup {
+    margin-bottom: 25px;
+}
+
+/* ラベル */
+.formGroup label {
+    display: block;
+    font-size: 1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+    /* 左側に小さなアクセント */
+    border-left: 5px solid #ff0055;
+    padding-left: 10px;
+}
+
+/* テキスト入力とセレクトボックス */
+.inputField {
+    width: 100%;
+    padding: 12px;
+    /* 枠線を太く */
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1em;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.2s;
+}
+
+.inputField:focus {
+    /* フォーカス時は鮮やかな青 */
+    border-color: #00a8ff;
+    background-color: #f0f8ff; /* 薄い青背景 */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 168, 255, 0.1);
+}
+
+/* 登録ボタン */
+.submitBtn {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #ff0055; /* ポップな赤ピンク */
+    color: white;
+    font-size: 1.3em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 40px;
+    /* 立体的な影 */
+    box-shadow: 0 6px 0 #cc0044;
+}
+
+.submitBtn:hover {
+    background-color: #ff1a66;
+    transform: translateY(2px); /* 少し沈む */
+    box-shadow: 0 4px 0 #cc0044;
+}
+
+.submitBtn:active {
+    transform: translateY(6px); /* 完全に沈む */
+    box-shadow: none;
+}
+
+/* エラーメッセージ用スタイル */
+.errorMsg {
+  color: #ff0055; /* 赤ピンク */
+  font-size: 0.9em;
+  margin-top: 8px;
+  margin-bottom: 0;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+/* エラーメッセージの前にアイコンっぽい記号をつける */
+.errorMsg::before {
+    content: '!';
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: #ff0055;
+    color: white;
+    text-align: center;
+    line-height: 18px;
+    border-radius: 50%;
+    margin-right: 5px;
+    font-size: 0.8em;
+}
+
+/* レスポンシブ対応 (モバイル向け調整) */
+@media (max-width: 768px) {
+    .backBtn {
+        margin: 20px 0 0 15px;
+    }
+    .container {
+        width: 90%;
+        padding: 25px 20px;
+        margin-top: 20px;
+        /* スマホでも影を表示 */
+        box-shadow: 6px 6px 0 #00a8ff;
+    }
+
+    .container h1 {
+        font-size: 1.6em;
+        margin-bottom: 30px;
+    }
+
+    .inputField {
+        padding: 12px;
+        font-size: 16px; /* iOSでのズーム防止 */
+    }
+
+    .submitBtn {
+        font-size: 1.2em;
+        padding: 12px;
+    }
+}

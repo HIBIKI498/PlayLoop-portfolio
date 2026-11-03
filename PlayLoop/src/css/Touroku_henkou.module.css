@@ -1,0 +1,182 @@
+/* src/css/Touroku_henkou.module.css */
+
+.container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 12px;
+  border: 3px solid #333;
+  box-shadow: 8px 8px 0 #00a8ff;
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 25px;
+  text-align: center;
+  color: #333;
+  background: linear-gradient(transparent 60%, #ffe600 60%);
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 5px;
+}
+
+.message {
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 900;
+  border: 3px solid;
+}
+
+.success {
+  background-color: #e9fff8;
+  color: #00a8ff;
+  border-color: #00a8ff;
+}
+
+.error {
+  background-color: #fff0f5;
+  color: #ff0055;
+  border-color: #ff0055;
+}
+
+.iconArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #ff0055;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+  border: 3px solid #333;
+  box-shadow: 4px 4px 0 #333;
+}
+
+.iconLabel {
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 900;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  display: block;
+  font-weight: 900;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 1.05rem;
+}
+
+.subLabel {
+  font-size: 0.85rem;
+  color: #666;
+  font-weight: bold;
+}
+
+.input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 3px solid #333;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.2s;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.05);
+}
+
+.input:focus {
+  outline: none;
+  border-color: #00a8ff;
+  background-color: #f0f8ff;
+  box-shadow: 3px 3px 0 rgba(0, 168, 255, 0.3);
+}
+
+.inputDisabled {
+  background-color: #eee;
+  color: #888;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.cancelBtn {
+  flex: 1;
+  padding: 14px;
+  background-color: #fff;
+  color: #333;
+  border: 3px solid #333;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #333;
+  transition: all 0.2s;
+}
+
+.cancelBtn:hover {
+  background-color: #eee;
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0 #333;
+}
+
+.cancelBtn:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}
+
+.submitBtn {
+  flex: 1;
+  padding: 14px;
+  background-color: #ff0055;
+  color: #fff;
+  border: 3px solid #333;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 4px 4px 0 #333;
+}
+
+.submitBtn:hover {
+  background-color: #ff1a66;
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0 #333;
+}
+
+.submitBtn:active {
+  transform: translateY(4px);
+  box-shadow: none;
+}

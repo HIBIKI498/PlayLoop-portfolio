@@ -1,0 +1,201 @@
+/* src/css/Account.css */
+
+/* --- Container (カード全体) --- */
+.container {
+  background-color: #fff;
+  padding: 40px 40px;
+  /* 太い枠線でポップに */
+  border: 3px solid #333;
+  border-radius: 12px;
+  /* 影をぼかさず、ずらして配置（版ズレ効果） */
+  box-shadow: 8px 8px 0 #00a8ff; 
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  margin: 100px auto;
+  position: relative;
+}
+
+/* プログレスバー関連のスタイルは削除済み */
+
+/* --- Headings --- */
+h2 {
+  color: #333;
+  font-weight: 900; /* 極太フォント */
+  margin-bottom: 25px;
+  font-size: 28px;
+  /* 蛍光マーカーのような黄色い下線 */
+  background: linear-gradient(transparent 60%, #ffe600 60%);
+  display: inline-block;
+  padding: 0 5px;
+}
+
+/* --- Form Styles --- */
+.form-group {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  /* 入力欄の枠も少し太く */
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: #333;
+  transition: all 0.3s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #00a8ff; /* フォーカス時に鮮やかな青 */
+  background-color: #f0f8ff; /* 薄い青背景 */
+}
+
+.info-text {
+  text-align: left;
+  font-size: 12px;
+  color: #888;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+/* --- Buttons --- */
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  gap: 10px; /* ボタン間の隙間 */
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+  display: inline-block;
+  text-align: center;
+  /* 立体的な影をつける */
+  box-shadow: 0 4px 0 rgba(0,0,0,0.2);
+  position: relative;
+}
+
+.btn:active {
+  transform: translateY(4px); /* 押したときに沈む */
+  box-shadow: none;
+}
+
+/* プライマリボタン（ログインなど）：青 */
+.btn-primary {
+  background-color: #00a8ff;
+  color: #fff;
+  box-shadow: 0 4px 0 #007bbd;
+  width: 100%; /* 幅いっぱいに */
+}
+
+.btn-primary:hover {
+  background-color: #0096e6;
+}
+
+.btn-primary:active {
+  box-shadow: 0 0 0 #007bbd;
+}
+
+/* セカンダリボタン（戻るなど）：白ベース */
+.btn-secondary {
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #ccc;
+  box-shadow: 0 4px 0 #bbb;
+}
+
+.btn-secondary:hover {
+  background-color: #f9f9f9;
+  border-color: #bbb;
+}
+
+.btn-secondary:active {
+  box-shadow: 0 0 0 #bbb;
+}
+
+/* --- Checkmark (完了画面) --- */
+.checkmark-circle {
+  width: 80px;
+  height: 80px;
+  background-color: #ffe600; /* 黄色い背景 */
+  border: 3px solid #333;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 20px;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+}
+
+.checkmark {
+  width: 30px;
+  height: 15px;
+  border-bottom: 5px solid #333; /* 黒いチェック */
+  border-left: 5px solid #333;
+  transform: rotate(-45deg);
+  margin-bottom: 5px;
+}
+
+/* --- Register Prompt (登録への誘導) --- */
+.register-prompt {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 2px dashed #ddd; /* 点線で区切り */
+  text-align: center;
+}
+
+.register-prompt p {
+  margin-bottom: 15px;
+  color: #555;
+  font-weight: bold;
+}
+
+/* 新規登録ボタン：ピンク（赤）で目立たせる */
+.register-link-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  
+  background-color: #fff;
+  color: #ff0055;
+  border: 2px solid #ff0055;
+  
+  box-sizing: border-box;
+  transition: all 0.2s;
+  box-shadow: 4px 4px 0 #ff0055; /* ポップなピンクの影 */
+}
+
+.register-link-btn:hover {
+  background-color: #ff0055;
+  color: #fff;
+  transform: translate(2px, 2px); /* ホバーで少し沈む */
+  box-shadow: 2px 2px 0 rgba(255, 0, 85, 0.5);
+}
+
+.register-link-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
