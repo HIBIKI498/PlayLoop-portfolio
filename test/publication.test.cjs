@@ -5,7 +5,7 @@ const { tmpdir } = require('node:os');
 const path = require('node:path');
 const { execFileSync, spawnSync } = require('node:child_process');
 
-test('publication guard rejects forced environment/image files and retained secret history', (t) => {
+function createFixture(t) {
   const root = mkdtempSync(path.join(tmpdir(), 'playloop-publication-test-'));
   t.after(() => {
     assert.ok(path.resolve(root).startsWith(path.resolve(tmpdir()) + path.sep));
@@ -25,6 +25,11 @@ test('publication guard rejects forced environment/image files and retained secr
   writeFileSync(path.join(root, '.env.example'), 'DB_PASSWORD=replace-me\n');
   git('add', '.');
   assert.equal(check().status, 0);
+  return { root, git, check };
+}
+
+test('publication guard rejects forced environment/image files and retained secret history', (t) => {
+  const { root, git, check } = createFixture(t);
 
   writeFileSync(path.join(root, '.env'), 'DB_PASSWORD=replace-me\n');
   git('add', '-f', '.env');
@@ -43,4 +48,61 @@ test('publication guard rejects forced environment/image files and retained secr
   const historyResult = check();
   assert.equal(historyResult.status, 1);
   assert.match(historyResult.stderr, /environment file/);
+});
+
+test('publication guard checks untracked, unstaged and staged credentials without printing values', (t) => {
+  const { root, git, check } = createFixture(t);
+  const filename = path.join(root, 'config.js');
+  const credential = ['private', 'fixture', 'value'].join('-');
+  const name = ['DB', 'PASSWORD'].join('_');
+  const sensitiveContent = `const ${name} = ${JSON.stringify(credential)};\n`;
+  const safeContent = 'const configured = false;\n';
+  const assertRejected = () => {
+    const result = check();
+    assert.equal(result.status, 1);
+    assert.match(result.stderr, /config\.js: hardcoded credential/);
+    assert.ok(!result.stderr.includes(credential));
+  };
+
+  writeFileSync(filename, sensitiveContent);
+  assertRejected(); // A new file has not been added to Git yet.
+  writeFileSync(filename, safeContent);
+  git('add', 'config.js');
+  assert.equal(check().status, 0);
+  writeFileSync(filename, sensitiveContent);
+  assertRejected(); // The index is safe but the current edit is not.
+  git('add', 'config.js');
+  writeFileSync(filename, safeContent);
+  assertRejected(); // Restoring the working copy must not hide staged secrets.
+  git('add', 'config.js');
+  assert.equal(check().status, 0);
+
+  writeFileSync(path.join(root, '.env'), `${name}=${credential}\n`);
+  assert.equal(check().status, 0); // An ignored local .env is not a publication file.
+
+  writeFileSync(path.join(root, 'settings.txt'), `${name}=${credential}\n`);
+  const unquotedResult = check();
+  assert.equal(unquotedResult.status, 1);
+  assert.match(unquotedResult.stderr, /settings\.txt: hardcoded environment credential/);
+  assert.ok(!unquotedResult.stderr.includes(credential));
+});
+
+test('publication guard rejects personal contact details in untracked documents', (t) => {
+  const { root, check } = createFixture(t);
+  const contact = ['person', 'mail.example.com'].join('@');
+  writeFileSync(path.join(root, 'notes.md'), `Contact: ${contact}\n`);
+  const result = check();
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /notes\.md: non-example email address/);
+  assert.ok(!result.stderr.includes(contact));
+});
+
+test('publication guard checks commit messages even when file contents are safe', (t) => {
+  const { git, check } = createFixture(t);
+  const token = 'ghp_' + 'a'.repeat(36);
+  git('commit', '-m', `Fixture message containing ${token}`);
+  const result = check();
+  assert.equal(result.status, 1);
+  assert.match(result.stderr, /commit metadata: GitHub token/);
+  assert.ok(!result.stderr.includes(token));
 });

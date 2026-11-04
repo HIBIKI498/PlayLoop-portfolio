@@ -1,54 +1,29 @@
-# React + TypeScript + Vite
+# PlayLoop フロントエンド
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React / TypeScript / Viteで構成した画面部分です。作品全体の説明は [リポジトリのREADME](../README.md)、環境設定は [開発環境の手順](../docs/SETUP.md) を参照してください。
 
-Currently, two official plugins are available:
+**このフォルダー内で使うコマンド**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```sh
+npm ci
+npm run dev
+npm run lint
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+`npm run dev` が表示したURLを開くと、設定が未完了の場合は案内画面が表示されます。アプリの操作には開発専用のFirebase設定とバックエンドが必要です。
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+**主なファイル**
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+| 場所 | 内容 |
+| --- | --- |
+| `src/main.tsx` | 起動処理と未設定時の案内 |
+| `src/App.tsx` | 画面遷移とログイン必須画面の制御 |
+| `src/api.ts` | APIへのリクエストとIDトークンの付与 |
+| `src/firebase.ts` | 環境変数からのFirebase初期化 |
+| `src/components/` | 機能ごとの画面 |
+| `src/css/` | スタイル |
+
+環境変数は `.env.example` を参考に、このフォルダーの `.env` へ設定します。`VITE_` で始まる値はブラウザーへ配布されるため、DBパスワードや秘密鍵を設定しないでください。
+
+リポジトリ全体の検証は、ひとつ上のフォルダーで `npm run verify:publication` を実行します。

@@ -16,6 +16,7 @@
     "start": "node --env-file-if-exists=.env server.js",
     "test": "node --test test/*.test.cjs",
     "check:publication": "node scripts/check-publication.cjs",
+    "verify:publication": "npm test && npm run lint --prefix PlayLoop && npm run build --prefix PlayLoop && npm run check:publication",
     "prepare": "git config --local core.hooksPath .githooks"
   }
 }
